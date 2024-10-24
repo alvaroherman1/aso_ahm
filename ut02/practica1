@@ -1,0 +1,16 @@
+Enunciado
+1. Permisos de usuarios
+A no ser que se indique lo contrario realiza todas las operaciones desde el directorio personal de tu usuario.
+
+Crea el directorio pr0201 dentro de tu directorio personal y dentro de él crea los directorios dir1 y dir2 ¿Cuáles son los permisos del directorio dir1? No pongas una captura, explica quiénes tienen permisos sobre el directorio y qué pueden hacer en él.
+ El directorio dir1 tiene permisos de lectura,escritura y ejecucion
+ 
+Utilizando la notación simbólica, elimina todos los permisos de escritura (propietario, grupo, otros) del directorio dir2.
+
+Utilizando la notación octal, elimina el permiso de lectura del directorio dir2, al resto de los usuarios.
+
+¿Cuáles son ahora los permisos asociados a dir2?
+
+Crear bajo dir2, un directorio llamado dir21.
+
+Concédete a ti mismo permiso de escritura en el directorio dir2 e intenta de nuevo el paso anterior.
