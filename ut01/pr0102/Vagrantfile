@@ -1,7 +1,5 @@
 Vagrant.configure("2") do |config|
-  #Configuración de la red privada
   config.vm.network "private_network" , ip: "192.168.0.0", netmask: "255.255.255.0"
-  #Configuración del Windows 2019 Servidor
   config.vm.define "win19server" do |serverwindows|
     serverwindows.vm.box = "gusztavvargadr/windows-server-2019-standard"
     serverwindows.vm.hostname = "win19server"
@@ -11,7 +9,6 @@ Vagrant.configure("2") do |config|
       vb.cpus = 4
     end
   end
-  #Configuración del Windows 10 Usuario
   config.vm.define "win10user" do |windowsusuario|
     windowsusuario.vm.box = "gusztavvargadr/windows-10"
     windowsusuario.vm.hostname = "win10user"
