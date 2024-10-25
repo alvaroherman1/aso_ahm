@@ -1,26 +1,21 @@
-vagrant.configure("2") do |config|
+Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/jammy64"
-  config.vm.hostname = "server-AHM"
-  config.vm.network "private_network" , ip: 172.16.0.0/16
-  config.vm.network "public_network" , ip: 10.99.0.0/16
-  config.vm.provider "virtualbox" do |vb|
-    vb.name="WEB SERVER"
-    vb.memory = "2048"
-    vb.cpus= 2
+  config.vm.define "Web server" do |web|
+    web.vm.hostname = "web-AHM"
+    web.vm.provider "virtualbox" do |vb|
+      vb.memory = "3072"
+      vb.cpus = 2
+    end
+    web.vm.network "private_network", ip: "172.16.0.10"
+    web.vm.network "public_network", ip: "10.99.0.10"
+    web.vm.provision "shell", inline: <<-SHELL
+      sudo apt-get update
+      sudo apt-get install -y apache2
+      sudo ufw allow 'Apache Full'
+      echo '<h1>Página principal de Mi Sitio Web</h1>' | sudo tee /var/www/html/index.html
+      echo '<h1>Página 2</h1>' | sudo tee /var/www/html/page2.html
+      echo '<h1>Página 3</h1>' | sudo tee /var/www/html/page3.html
+      sudo wget -O /var/www/html/image.jpg https://via.placeholder.com/150
+    SHELL
   end
-  config.vm.provision "shell", inline: <<-SHELL
-  sudo apt-get update
-  sudo apt-get install -y apache2
-  sudo mkdir -p /var/www/html/misitio
-
-  echo "<html><head><title>Página Principal</title></head><body><h1>Bienvenido a mi sitio web</h1><p>Esta es la página principal</p></body></html>" | sudo tee /var/www/html/misitio/index.html
-  echo "<html><head><title>Acerca de</title></head><body><h1>Acerca de</h1><p>Esta es la página acerca de nosotros</p></body></html>" | sudo tee /var/www/html/misitio/acerca.html
-  echo "<html><head><title>Contacto</title></head><body><h1>Contacto</h1><p>Puedes contactarnos en contacto@misitio.com</p></body></html>" | sudo tee /var/www/html/misitio/contacto.html
-  sudo wget https://via.placeholder.com/150 -O /var/www/html/misitio/imagen.jpg
-
-  sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/misitio.conf
-  sudo sed -i 's|/var/www/html|/var/www/html/misitio|g' /etc/apache2/sites-available/misitio.conf
-  sudo a2ensite misitio.conf
-  sudo systemctl reload apache2
-SHELL
 end
