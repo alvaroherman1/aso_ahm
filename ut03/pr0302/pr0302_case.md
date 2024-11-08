@@ -4,7 +4,6 @@ Realiza las siguientes tareas:
 Ejercicio 1: Menú de operaciones matemáticas
 Crea un script que muestre un menú con opciones para sumar, restar, multiplicar y dividir dos números. Debe pedir primero un operando, luego el otro y finalmente la operación a realizar. Usa case para realizar la operación seleccionada por el usuario.
 ```bash
-
 ```
 
 Ejercicio 2: Verificar días de la semana

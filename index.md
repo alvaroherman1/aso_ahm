@@ -12,7 +12,7 @@
 - [PR0204](./ut02/pr0204/pr0204.md)
 
 ## Unidad 3
-- [PR0301_comandoif](./ut03/pr0301/pr0201.md)
+- [PR0301_comandoif](./ut03/pr0301/pr0301_if.md)
 - [PR0301_scripts](./ut03/pr0301/pr0201.md)
 - [PR0302_case](./ut03/pr0302/pr0202.md)
 - [PR0302_comandocase](./ut03/pr0302/pr0202.md)
