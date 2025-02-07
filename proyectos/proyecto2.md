@@ -33,19 +33,19 @@ El dominio educativo implementado sigue una estructura organizada y optimizada p
 #### Profesores
 - **Grupo: Profesores**
 
-## Justificación de la Estructura
+## **Justificación de la Estructura**
 
-### Separación de Alumnos y Profesores
-La división de los usuarios en unidades organizativas separadas permite establecer políticas de seguridad personalizadas para cada grupo. Esto facilita la administración de permisos, accesos y restricciones, garantizando un entorno seguro y funcional.
+### **Separación de Usuarios por Perfil**
+La división de alumnos y profesores en UOs independientes permite aplicar políticas de seguridad personalizadas, restringiendo o permitiendo acciones según el tipo de usuario. Esto mejora la seguridad y simplifica la gestión de accesos y permisos.
 
-### Organización por Ciclos Formativos
-Cada ciclo formativo se organiza en su propia unidad organizativa con subdivisiones para los cursos de primero y segundo. Esto permite una gestión más eficaz de usuarios y recursos, asegurando que cada grupo tenga acceso a las herramientas necesarias.
+### **Organización por Ciclos Formativos y Aulas**
+Cada ciclo se ha estructurado en unidades organizativas diferenciadas, con subdivisión por curso y aulas. Esto facilita:
+- La asignación de políticas específicas a cada curso.
+- El control de los equipos de cada aula de manera segmentada.
+- La delegación de permisos y restricciones según el nivel educativo.
 
-### Aulas como Unidades Organizativas
-Cada aula se ha definido como una UO dentro del curso correspondiente. Esto permite aplicar políticas específicas a los equipos dentro de cada aula y segmentar la gestión de recursos de manera ordenada.
-
-### Centralización de Profesores
-Los profesores se agrupan en una única UO, facilitando la administración de permisos y accesos a recursos compartidos. Además, se pueden establecer excepciones a ciertas políticas aplicadas a los alumnos para garantizar su capacidad administrativa.
+### **Agrupación de Profesores**
+Los profesores se administran en un grupo separado, lo que permite asignarles permisos especiales para acceder a recursos compartidos y eximirlos de ciertas restricciones aplicadas a los alumnos.
 
 ## Automatización del Alta de Usuarios y Creación de Carpetas
 Se ha implementado un script en PowerShell que automatiza la creación de usuarios en Active Directory y la asignación de carpetas personales y compartidas. Este proceso garantiza que todos los alumnos sean dados de alta correctamente en el dominio, reduciendo errores y optimizando el tiempo de administración.
@@ -74,11 +74,17 @@ Se han implementado diversas políticas de grupo (GPO) para mejorar la seguridad
 - Número de intentos fallidos: **6**
 - Duración del bloqueo: **10 minutos**
 
-### Restricciones de Acceso
-- Prohibido acceso al **CMD** para alumnos (excepto profesores).
-- Filtrado de contenido en Internet para restringir acceso a páginas no educativas.
-- Deshabilitado el cambio de fondo de pantalla en equipos de alumnos.
-- Prohibición de acceso al **Panel de Control** y configuración para alumnos.
+### Control de Dispositivos y Software
+- **Deshabilitación de dispositivos USB** para alumnos, permitiendo solo su uso a profesores y administradores.
+- **Restricción de instalación de software no autorizado**, permitiendo únicamente aplicaciones aprobadas por la institución.
+
+### Control de Sesiones y Auditoría
+- **Configuración de horarios de acceso restringido**, evitando que los alumnos puedan iniciar sesión fuera del horario escolar.
+- **Implementación de registro de actividad en el sistema**, permitiendo auditorías periódicas sobre accesos y cambios en configuraciones sensibles.
+
+### Control de Recursos y Datos
+- **Control de impresión restringida**, limitando el acceso a impresoras para evitar desperdicio de recursos y mejorar la seguridad de documentos sensibles.
+- **Aplicación de cifrado en dispositivos locales**, asegurando que la información almacenada en los discos duros de los equipos no pueda ser accedida sin autorización.
 
 ## Script
 ```bash
