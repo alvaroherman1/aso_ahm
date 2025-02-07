@@ -28,7 +28,8 @@
 ## Unidad 5
 - [PR0501](./ut05/pr0501/pr0501.md)
 - [PR0501](./ut05/pr0501.md)
-- [PR0502](./ut05/pr0502/pr0502.md)
+- [PR0502](./ut05/pr0501//pr0502/pr0502.md)
   
  ## Proyectos
 - [Proyecto1](./proyectos/proyecto1.md)
+- [Proyecto2](./proyectos/proyecto2.md)
