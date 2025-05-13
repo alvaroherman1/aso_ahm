@@ -36,5 +36,8 @@
   
  ## Repaso 
 - [PR0201R](./ut02/pr0201r/pr0201rmd)
-- [PR0202R](./ut02/pr0202r/pr0202rmd)
+- [PR0202R](./ut02/pr0202r/pr0202r.md)
 - [PR0203R](./ut02/pr0203r/pr0203r.md)
+- [PR0301R](./ut03/pr0301r/pr0301r.md)
+- [PR0302R](./ut03/pr03r2/pr03r2.md)
+- [PR0401R](./ut04/pr040r1/pr040r1.md)
